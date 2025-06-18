@@ -1,9 +1,15 @@
-import React from 'react';
+import { ComponentProps } from "@/interfaces";
+import Header from "./Header";
+import Footer from "./Footer";
 
-const Button = () => {
+const Layout: React.FC<ComponentProps> = ({ children }) => {
   return (
-    <button>Click me</button>
-  );
-};
+    <>
+      <Header />
+      <main className="min-h-screen">{children}</main>
+      <Footer />
+    </>
+  )
+}
 
-export default Button;
+export default Layout;
